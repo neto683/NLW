@@ -9,21 +9,24 @@
   --hedline:hsl(210, 11%, 15%);
   --paragraph:hsla(210, 9%, 31%, 1);
   --body-color:hsla(148, 23%, 89%);
+  --nav-heigt:7.2rem;
 }
 body{
   font-family: 'DM Sans';
   font-size: 1.6rem;
   text-align: center;
-  
+ 
 }
-header{
+.wrapper{
   width: 37.5rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
   padding-right:2rem;
-  margin-top: 4.1rem;
-  background:var(--body-color)
+}
+header{
+ 
+  margin-top: calc(4.1rem + var(--nav-heigt));
 }
 h4{
   font-size: 1.4rem;
@@ -90,4 +93,46 @@ header img{
   margin-inline: auto;
   object-position: 0 2rem;
   width:26.1rem
+}
+header::before{
+ content: "";
+ width:100vw;
+ height:calc(108rem + var(--nav-heigt));
+ background-color:var(--body-color);
+ display:block;
+ position:absolute;
+ top:0;
+ left:0;
+ z-index: -1;
+ 
+}
+a{
+  display:flex;
+  
+  align-items:center;
+  justify-content: space-between;
+}
+nav{
+  padding-inline:2.4rem;
+  padding-block: 1.6rem;
+  position: fixed;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  height:var(--nav-heigt);
+  background-color: ;
+}
+nav.wrapper{
+  display:flex;
+ 
+}
+nav.scroll{
+  background-color:var(--primary-color);
+  width:100vw;
+}
+nav.scroll svg:nth-child(1) path{
+  fill:white;
+}
+nav.scroll svg:nth-child(2) path{
+  stroke:white;
 }
